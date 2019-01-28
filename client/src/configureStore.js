@@ -2,6 +2,9 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 
+import reducer from './reducers';
+import getTranslationsSaga from './sagas/getTranslationsSaga';
+
 const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
@@ -10,7 +13,9 @@ const configureStore = () => {
     middlewares.push(createLogger());
   }
 
-  const store = createStore(() => ({}), applyMiddleware(...middlewares));
+  const store = createStore(reducer, applyMiddleware(...middlewares));
+
+  sagaMiddleware.run(getTranslationsSaga);
 
   return store;
 };

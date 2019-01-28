@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import TranslateDashBody from './components/TranslateDashBody.container';
 import './App.scss';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            translate-dash
-          </p>
-        </header>
+        <TranslateDashBody />
       </div>
     );
   }
