@@ -4,6 +4,7 @@ import { createLogger } from 'redux-logger';
 
 import reducer from './reducers';
 import getTranslationsSaga from './sagas/getTranslationsSaga';
+import postTranslationSaga from './sagas/postTranslationSaga';
 
 const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
@@ -16,6 +17,7 @@ const configureStore = () => {
   const store = createStore(reducer, applyMiddleware(...middlewares));
 
   sagaMiddleware.run(getTranslationsSaga);
+  sagaMiddleware.run(postTranslationSaga);
 
   return store;
 };

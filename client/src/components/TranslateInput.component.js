@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ translationInputText, updateTranslationInputText }) => (
+export default ({ translationInputText, updateTranslationInputText, postTranslationRequest }) => (
   <div className="translate_input">
     <p>
       translate-dash
@@ -14,7 +14,7 @@ export default ({ translationInputText, updateTranslationInputText }) => (
         onChange={(t) => updateTranslationInputText(t.target.value)}
       />
       <button
-        onClick={() => {console.log("Click.")}}
+        onClick={() => postTranslationRequest(translationInputText)}
       >
         Translate
       </button>

@@ -1,7 +1,13 @@
 import { connect } from 'react-redux';
 
 import { getTranslationsRequest } from '../actions';
+import { translationsLoadingSelector, translationsErrorMessageSelector } from '../reducers/translations';
 import TranslateDashboardComponent from './TranslateDashboard.component';
+
+const mapStateToProps = ({ translations }) => ({
+  areTranslationsLoading: translationsLoadingSelector(translations),
+  translationsErrorMessage: translationsErrorMessageSelector(translations),
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchAPIData: () => {
@@ -9,6 +15,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const TranslateDashboard = connect(null, mapDispatchToProps)(TranslateDashboardComponent);
+const TranslateDashboard = connect(mapStateToProps, mapDispatchToProps)(TranslateDashboardComponent);
 
 export default TranslateDashboard;
