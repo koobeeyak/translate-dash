@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import TranslateDashBody from './components/TranslateDashBody.container';
+import TranslateDashboard from './components/TranslateDashboard.container';
 import './App.scss';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <TranslateDashBody />
+        <TranslateDashboard />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { getTranslationsRequest } from '../actions';
-import TranslateDashBodyComponent from './TranslateDashBody.component';
+import TranslateDashboardComponent from './TranslateDashboard.component';
 
 const mapDispatchToProps = dispatch => ({
   fetchAPIData: () => {
@@ -9,6 +9,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const TranslateDashBody = connect(null, mapDispatchToProps)(TranslateDashBodyComponent);
+const TranslateDashboard = connect(null, mapDispatchToProps)(TranslateDashboardComponent);
 
-export default TranslateDashBody;
+export default TranslateDashboard;

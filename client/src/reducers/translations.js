@@ -2,6 +2,7 @@ import {
   GET_TRANSLATIONS_REQUEST,
   GET_TRANSLATIONS_SUCCESS,
   GET_TRANSLATIONS_FAILURE,
+  UPDATE_TRANSLATION_INPUT_TEXT
 } from '../actions';
 
 const defaultState = {
@@ -9,6 +10,7 @@ const defaultState = {
   loading: false,
   errorMessage: '',
   currentInterface: 'translationInput',
+  translationInputText: '',
 };
 
 export default (state = defaultState, action) => {
@@ -30,7 +32,18 @@ export default (state = defaultState, action) => {
         loading: false,
         errorMessage: action.errorMessage,
       };
+    case UPDATE_TRANSLATION_INPUT_TEXT:
+      return {
+        ...state,
+        translationInputText: action.translationInputText,
+      }
     default:
       return state;
   }
 };
+
+export const tranlsationsLoadingSelector = ({ loading }) => loading;
+export const translationsErrorMessageSelector = ({ errorMessage }) => errorMessage;
+export const translationsDataSelector = ({ data }) => data;
+export const translationInputTextSelector = ({ translationInputText }) => translationInputText;
+export const currentInterfaceSelector = ({ currentInterface }) => currentInterface;
