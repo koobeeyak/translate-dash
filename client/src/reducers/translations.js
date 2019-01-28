@@ -7,6 +7,7 @@ import {
   POST_TRANSLATION_SUCCESS,
   POST_TRANSLATION_FAILURE,
   CHANGE_INTERFACE,
+  UPDATE_ERROR_MESSAGE,
 } from '../actions';
 
 const defaultState = {
@@ -38,7 +39,7 @@ export default (state = defaultState, action) => {
         data: [...state.data, action.data],
         loading: false,
         currentInterface: 'translateTable',
-        translationInputText: ''
+        translationInputText: '',
       };
     case GET_TRANSLATIONS_FAILURE:
     case POST_TRANSLATION_FAILURE:
@@ -52,12 +53,18 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         translationInputText: action.translationInputText,
-      }
+      };
     case CHANGE_INTERFACE:
       return {
         ...state,
         currentInterface: action.nextInterface,
-      }
+        errorMessage: '',
+      };
+    case UPDATE_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.errorMessage,
+      };
     default:
       return state;
   }

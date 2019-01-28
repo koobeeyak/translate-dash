@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default TranslateTableHeader => (
+export default () => (
   <tbody>
     <tr>
       <th>Input Text</th>

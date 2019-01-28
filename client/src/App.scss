@@ -10,11 +10,24 @@ body {
   background-color: $background--dark;
 }
 
+.translate_dashboard {
+  padding-top: 45px;
+}
+
+.click_nav {
+  position: relative;
+}
+
+.click_nav--left {
+  left: 2%;
+}
+
+.click_nav--right {
+  left: 38%;
+}
+
 .translate_input {
-  // align-items: center;
   text-align: center;
-  // justify-content: center;
-  padding-top: 90px;
   font-size: 46px;
   color: $header--regular;
 
