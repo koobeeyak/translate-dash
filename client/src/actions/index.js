@@ -5,6 +5,7 @@ export const UPDATE_TRANSLATION_INPUT_TEXT = 'UPDATE_TRANSLATION_INPUT_TEXT';
 export const POST_TRANSLATION_REQUEST = 'POST_TRANSLATION_REQUEST';
 export const POST_TRANSLATION_FAILURE = 'POST_TRANSLATION_FAILURE';
 export const POST_TRANSLATION_SUCCESS = 'POST_TRANSLATION_SUCCESS';
+export const CHANGE_INTERFACE = 'CHANGE_INTERFACE';
 
 export const getTranslationsRequest = () => ({
   type: GET_TRANSLATIONS_REQUEST,
@@ -38,4 +39,9 @@ export const postTranslationFailure = errorMessage => ({
 export const postTranslationSuccess = data => ({
   type: POST_TRANSLATION_SUCCESS,
   data,
+});
+
+export const changeInterface = nextInterface => ({
+  type: CHANGE_INTERFACE,
+  nextInterface,
 });

@@ -6,14 +6,14 @@ import {
   POST_TRANSLATION_REQUEST,
   POST_TRANSLATION_SUCCESS,
   POST_TRANSLATION_FAILURE,
-
+  CHANGE_INTERFACE,
 } from '../actions';
 
 const defaultState = {
   data: [],
   loading: false,
   errorMessage: '',
-  currentInterface: 'translationInput',
+  currentInterface: 'translateInput',
   translationInputText: '',
 };
 
@@ -24,13 +24,21 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         loading: true,
+        errorMessage: '',
       };
     case GET_TRANSLATIONS_SUCCESS:
-    case POST_TRANSLATION_SUCCESS:
       return {
         ...state,
         data: action.data,
         loading: false,
+      };
+    case POST_TRANSLATION_SUCCESS:
+      return {
+        ...state,
+        data: [...state.data, action.data],
+        loading: false,
+        currentInterface: 'translateTable',
+        translationInputText: ''
       };
     case GET_TRANSLATIONS_FAILURE:
     case POST_TRANSLATION_FAILURE:
@@ -38,11 +46,17 @@ export default (state = defaultState, action) => {
         ...state,
         loading: false,
         errorMessage: action.errorMessage,
+        translationInputText: '',
       };
     case UPDATE_TRANSLATION_INPUT_TEXT:
       return {
         ...state,
         translationInputText: action.translationInputText,
+      }
+    case CHANGE_INTERFACE:
+      return {
+        ...state,
+        currentInterface: action.nextInterface,
       }
     default:
       return state;
