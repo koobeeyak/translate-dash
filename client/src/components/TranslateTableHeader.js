@@ -2,11 +2,11 @@ import React from 'react';
 
 export default () => (
   <tbody>
-    <tr>
-      <th>Input Text</th>
-      <th>Input Language (Derived)</th>
-      <th>Output Text</th>
-      <th>Output Language</th>
+    <tr className="translate_table--headers">
+      <th>input text</th>
+      <th>input language</th>
+      <th>output text</th>
+      <th>output language</th>
     </tr>
   </tbody>
 );

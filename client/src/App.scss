@@ -12,6 +12,12 @@ body {
 
 .translate_dashboard {
   padding-top: 45px;
+
+  .translate_dashboard__header {
+    font-family: 'Pacifico', cursive;
+    color: $primary--light;
+    font-size: 58px;
+  }
 }
 
 .click_nav {
@@ -28,11 +34,32 @@ body {
 
 .translate_input {
   text-align: center;
-  font-size: 46px;
-  color: $header--regular;
 
   .translate_input__input--standard {
     margin-right: 8px;
     width: 440px;
+  }
+}
+
+.translate_table {
+  margin: auto;
+  color: white;
+  border-spacing: 8px;
+  padding-top: 10px;
+  border: 2px solid $primary--light;
+
+  .translate_table--headers {
+    font-family: 'Pacifico', cursive;
+    color: $primary--light;
+    font-size: 20px;
+    border-bottom: 2px solid;
+
+    th {
+      border-bottom: 2px solid;
+    }
+  }
+
+  td {
+    min-width: 265px;
   }
 }
