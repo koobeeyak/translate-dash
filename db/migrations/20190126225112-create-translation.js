@@ -11,6 +11,15 @@ module.exports = {
       inputText: {
         type: Sequelize.STRING
       },
+      inputDerivedLanguage: {
+        type: Sequelize.STRING
+      },
+      outputText: {
+        type: Sequelize.STRING
+      },
+      outputLanguage: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

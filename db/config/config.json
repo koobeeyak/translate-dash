@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "kubiak",
     "password": null,
     "database": "translate_dash_dev",
     "host": "127.0.0.1",
