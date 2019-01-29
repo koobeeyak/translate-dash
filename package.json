@@ -7,7 +7,8 @@
     "start:dev": "nodemon ./bin/www",
     "db:create": "sequelize db:create",
     "db:drop": "sequelize db:drop",
-    "db:migrate": "sequelize db:migrate"
+    "db:migrate": "sequelize db:migrate",
+    "postinstall": "sequelize db:drop && sequelize db:create && sequelize db:migrate"
   },
   "dependencies": {
     "@google-cloud/translate": "^2.1.3",
