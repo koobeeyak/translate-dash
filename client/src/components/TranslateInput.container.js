@@ -6,11 +6,12 @@ import {
   changeInterface,
   updateErrorMessage,
 } from '../actions';
-import { translationInputTextSelector } from '../reducers/translations';
+import { translationInputTextSelector, translationsLoadingSelector } from '../reducers/translations';
 import TranslateInputComponent from './TranslateInput.component';
 
 const mapStateToProps = ({ translations }) => ({
   translationInputText: translationInputTextSelector(translations),
+  areTranslationsLoading: translationsLoadingSelector(translations),
 })
 
 const mapDispatchToProps = dispatch => ({
