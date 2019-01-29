@@ -1,3 +1,5 @@
+import isEmpty from 'lodash/isEmpty';
+
 import {
   GET_TRANSLATIONS_REQUEST,
   GET_TRANSLATIONS_SUCCESS,
@@ -34,9 +36,17 @@ export default (state = defaultState, action) => {
         loading: false,
       };
     case POST_TRANSLATION_SUCCESS:
+      if (!isEmpty(action.data)){
+        return {
+          ...state,
+          data: [...state.data, action.data],
+          loading: false,
+          currentInterface: 'translateTable',
+          translationInputText: '',
+        };
+      }
       return {
         ...state,
-        data: [...state.data, action.data],
         loading: false,
         currentInterface: 'translateTable',
         translationInputText: '',
